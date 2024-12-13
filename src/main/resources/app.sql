@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS app DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE app;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(256) NOT NULL,
+
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+INSERT INTO users (username, password) VALUES ('Admin', 'admin');
