@@ -72,11 +72,10 @@ public abstract class AbstractDAOImpl {
     }
 
     protected static Connection connectDB() throws ClassNotFoundException, SQLException {
-
         Class.forName(driverClassName);
         Connection conn = DriverManager.getConnection(schemaUrl, username, password);
-        return conn;
 
+        return conn;
     }
 
     protected static void closeDb(Connection connection, Statement statement, ResultSet resultSet) {

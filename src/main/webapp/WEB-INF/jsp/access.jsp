@@ -15,12 +15,18 @@
             <div class="card">
                 <div class="card-content">
                     <span class="card-title center-align">Control de acceso</span>
-                    <form>
+                    <%
+                        String error = (String) request.getAttribute("error");
+                        if (error != null && !error.isEmpty()) {
+                    %>
+                        <p class="red-text"><%= error %></p>
+                    <%}%>
+                    <form method="POST">
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">person</i>
 
-                                <input id="username" type="text" class="validate" required>
+                                <input id="username" name="username" type="text" class="validate" required>
                                 <label for="username">Usuario</label>
                             </div>
                         </div>
@@ -28,7 +34,7 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">lock</i>
 
-                                <input id="password" type="password" class="validate" required>
+                                <input id="password" name="password" type="password" class="validate" required>
                                 <label for="password">Contraseña</label>
                             </div>
                         </div>
